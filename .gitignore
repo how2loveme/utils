@@ -1,0 +1,5 @@
+.idea
+/mergepdf/build
+/mergepdf/dist
+/mergepdf/*.pdf
+/mergepdf/*.spec
