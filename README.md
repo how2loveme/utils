@@ -21,10 +21,13 @@ pip install pyautogui
 ## 📚merge PDF
 ```cmd
 # .exe maker
-pip install pyinstaller
+pip install pyinstaller==4.10
 
 # pdf library
 pip install pypdf
+
+# run installer
+pyinstaller -w -F .\mergepdf\mergepdf.py
 ```
 
 
