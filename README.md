@@ -29,5 +29,16 @@ pip install pypdf
 # run installer
 pyinstaller -w -F .\mergepdf\mergepdf.py
 ```
+## 🪝datadog - extract
+```cmd
+# node -v
+>= 18.16.0
+
+# necessary library
+npm i xlsx
+
+# run extractor
+node index.js
+```
 
 

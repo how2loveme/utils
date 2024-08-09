@@ -13,28 +13,30 @@ result.forEach((row, idx) => {
   const message = row['Message'];
   // if (idx === 0 ) console.log(message);
 
-  const reg_referer = /(?<=(referer":"))(.*?)(?=")/g;
-  const reg_commandPath = /(?<=(command.path : ))(.*?)(?= ,)/g;
-  const reg_commandUrl = /(?<=(options : {"url":"))(.*?)(?=")/g;
-  const reg_xNodeUrl = /(?<=("x-node-url":"))(.*?)(?=")/g;
-  const reg_loginType = /(?<=("loginType":"))(.*?)(?=")/g;
-  const reg_userId = /(?<=("userId":"))(.*?)(?=")/g;
-  const reg_svcMgmtNum = /(?<=("svcMgmtNum":"))(.*?)(?=")/g;
-  const reg_mbrChlId = /(?<=("mbrChlId":"))(.*?)(?=")/g;
-  const reg_errCode = /(?<=("code":"))(.*?)(?=")/g;
-  const reg_errMsg = /(?<=(\\"msg\\":\\"))(.*?)(?=\\")/g;
+  let reg = {
+    referer: /(?<=(referer":"))(.*?)(?=")/g,
+    commandPath: /(?<=(command.path : ))(.*?)(?= ,)/g,
+    commandUrl: /(?<=(options : {"url":"))(.*?)(?=")/g,
+    xNodeUrl: /(?<=("x-node-url":"))(.*?)(?=")/g,
+    loginType: /(?<=("loginType":"))(.*?)(?=")/g,
+    userId: /(?<=("userId":"))(.*?)(?=")/g,
+    svcMgmtNum: /(?<=("svcMgmtNum":"))(.*?)(?=")/g,
+    mbrChlId: /(?<=("mbrChlId":"))(.*?)(?=")/g,
+    errCode: /(?<=("code":"))(.*?)(?=")/g,
+    errMsg: /(?<=(\\"msg\\":\\"))(.*?)(?=\\")/g,
+  };
 
   // const res = message.match(regexr).join('')
-  temp.referer = (message.match(reg_referer))?.[0];
-  temp.commandPath = (message.match(reg_commandPath)||[])?.[0];
-  temp.commandUrl = (message.match(reg_commandUrl)||[])?.[0];
-  temp.xNodeUrl = (message.match(reg_xNodeUrl)||[])?.[0];
-  temp.loginType = (message.match(reg_loginType)||[])?.[0];
-  temp.userId = (message.match(reg_userId)||[])?.[0];
-  temp.svcMgmtNum = (message.match(reg_svcMgmtNum)||[])?.[0];
-  temp.mbrChlId = (message.match(reg_mbrChlId)||[])?.[0];
-  temp.errCode = (message.match(reg_errCode)||[])?.[0];
-  temp.errMsg = (message.match(reg_errMsg)||[])?.[0];
+  temp.referer = (message.match(reg.referer))?.[0];
+  temp.commandPath = (message.match(reg.commandPath)||[])?.[0];
+  temp.commandUrl = (message.match(reg.commandUrl)||[])?.[0];
+  temp.xNodeUrl = (message.match(reg.xNodeUrl)||[])?.[0];
+  temp.loginType = (message.match(reg.loginType)||[])?.[0];
+  temp.userId = (message.match(reg.userId)||[])?.[0];
+  temp.svcMgmtNum = (message.match(reg.svcMgmtNum)||[])?.[0];
+  temp.mbrChlId = (message.match(reg.mbrChlId)||[])?.[0];
+  temp.errCode = (message.match(reg.errCode)||[])?.[0];
+  temp.errMsg = (message.match(reg.errMsg)||[])?.[0];
 
   // if (idx === 0 ) console.log(temp);
   arr.push(temp);
