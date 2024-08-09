@@ -3,3 +3,5 @@
 /mergepdf/dist
 /mergepdf/*.pdf
 /mergepdf/*.spec
+*/**/node_modules
+*.csv
